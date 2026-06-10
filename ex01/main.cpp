@@ -43,14 +43,13 @@ void runTryCatch_bur(std::string name, int grade, bool loop_flag)
 void runTryCatch_form(Bureaucrat& b, std::string name, int grade_to_sign, int grade_to_excecute)
 {
 
-    Bureaucrat robert("Robert", 75);
-
     try
     {
         std::cout << "Making Form: " << name << std::endl;
         Form f(name, grade_to_sign, grade_to_excecute);
         std::cout << f;
         b.signForm(f);
+        std::cout << f;
     }
     catch(Form::GradeTooLowException &e)
     {
@@ -105,12 +104,12 @@ int main(void)
 
     runTryCatch_form(robert, "Min possible value sign", 1, 75);
     runTryCatch_form(robert, "Max possible value sign", 150, 75);
-    runTryCatch_form(robert, "Min possible value sign", 75, 1);
-    runTryCatch_form(robert, "Max possible value sign", 75, 150);
+    runTryCatch_form(robert, "Min possible value excecute", 75, 1);
+    runTryCatch_form(robert, "Max possible value excecute", 75, 150);
     runTryCatch_form(robert, "Invalid form min sign", 0, 75);
     runTryCatch_form(robert, "Invalid form max sign", 151, 75);
     runTryCatch_form(robert, "Invalid form min excecute", 75, 0);
-    runTryCatch_form(robert, "Invalid form max excecute", 75, 150);
+    runTryCatch_form(robert, "Invalid form max excecute", 75, 151);
 
 
 
