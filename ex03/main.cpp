@@ -27,7 +27,7 @@ int main(void)
 
     Intern billy;
 
-    AForm* f1 = billy.makeForm("shrubbery", "garden");
+    AForm* f1 = billy.makeForm("shrubbery creation", "garden");
     if (f1)
     {
         shrubsigner.signForm(*f1);
@@ -36,7 +36,7 @@ int main(void)
     }
     
 
-    AForm* f2 = billy.makeForm("robotomy", "bender");
+    AForm* f2 = billy.makeForm("robotomy request", "bender");
     if (f2)
     {
         robotsigner.signForm(*f2);
@@ -45,7 +45,7 @@ int main(void)
     }
     
 
-    AForm* f3 = billy.makeForm("pardon", "zoidberg");
+    AForm* f3 = billy.makeForm("presidential pardon", "zoidberg");
 
     if (f3)
     {

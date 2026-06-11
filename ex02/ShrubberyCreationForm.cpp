@@ -19,7 +19,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-	beExcecuted(executor);
+	beExecuted(executor);
 	
 	std::string filename = m_target + "_shrubbery";
 	std::ofstream file(filename.c_str());

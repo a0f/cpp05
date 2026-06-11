@@ -46,7 +46,7 @@ int main(void)
     runTryCatch_bur("decrement check", 76, true);
 
     std::cout << "------------------------------------\n";
-    std::cout << "Contructor checks\n";
+    std::cout << "Constructor checks\n";
     std::cout << "------------------------------------\n";
     
     runTryCatch_bur("below_min", 0, false);

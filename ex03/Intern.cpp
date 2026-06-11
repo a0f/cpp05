@@ -36,9 +36,9 @@ AForm * makePardonForm(std::string form_name)
 
 FromLookup functions[] =
 {
-	{"shrubbery", makeShrubForm},
-	{"robotomy", makeRobotomyForm},
-	{"pardon", makePardonForm}
+	{"shrubbery creation", makeShrubForm},
+	{"robotomy request", makeRobotomyForm},
+	{"presidential pardon", makePardonForm}
 };
 
 AForm* Intern::makeForm(std::string name, std::string target) const
