@@ -3,6 +3,13 @@
 
 #include "AForm.hpp"
 
+struct FromLookup
+{
+	std::string form_name;
+	AForm * (*create)(std::string);
+};
+
+
 class Intern
 {
 	public:

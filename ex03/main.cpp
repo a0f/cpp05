@@ -3,6 +3,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main(void)
 {
@@ -21,32 +22,33 @@ int main(void)
     Bureaucrat prespardexec("prespardexec", 5);
 
     std::cout << "------------------------------------\n";
-    std::cout << "ShrubberyCreationForm tests\n";
+    std::cout << "Intern tests\n";
     std::cout << "------------------------------------\n";
-    lowgrade.signForm(lilshrubster);
-    lowgrade.executeForm(lilshrubster);
-    shrubsigner.signForm(lilshrubster);
-    lowgrade.executeForm(lilshrubster);
-    shrubexec.executeForm(lilshrubster);
 
-    std::cout << "------------------------------------\n";
-    std::cout << "RobotomyRequestForm tests\n";
-    std::cout << "------------------------------------\n";
-    lowgrade.signForm(robotomizer);
-    lowgrade.executeForm(robotomizer);
-    robotsigner.signForm(robotomizer);
-    lowgrade.executeForm(robotomizer);
-    robotexec.executeForm(robotomizer);
+    Intern billy;
 
-    std::cout << "------------------------------------\n";
-    std::cout << "PresidentialPardonForm tests\n";
-    std::cout << "------------------------------------\n";
-    lowgrade.signForm(prespardoner);
-    lowgrade.executeForm(prespardoner);
-    prespardsigner.signForm(prespardoner);
-    lowgrade.executeForm(prespardoner);
-    prespardexec.executeForm(prespardoner);
+    AForm* f1 = billy.makeForm("shrubbery", "garden");
+    shrubsigner.signForm(*f1);
+    shrubexec.executeForm(*f1);
+    delete f1;
 
+    AForm* f2 = billy.makeForm("robotomy", "bender");
+
+    robotsigner.signForm(*f2);
+    robotexec.executeForm(*f2);
+    delete f2;
+
+    AForm* f3 = billy.makeForm("pardon", "zoidberg");
+
+    prespardsigner.signForm(*f3);
+    prespardexec.executeForm(*f3);
+    delete f3;
+
+    AForm* f4 = billy.makeForm("unknown form", "nobody");
+    if (f4 == NULL)
+    {
+        std::cout << "Got NULL ptr" << std::endl;
+    }
 
 
     return 0;

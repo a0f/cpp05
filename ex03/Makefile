@@ -1,8 +1,8 @@
-NAME = ex02
+NAME = ex03
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = Bureaucrat.cpp AForm.cpp main.cpp  ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+SRCS = Bureaucrat.cpp AForm.cpp main.cpp  ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 .PHONY: all clean fclean re
@@ -22,4 +22,3 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-
