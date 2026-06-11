@@ -28,21 +28,31 @@ int main(void)
     Intern billy;
 
     AForm* f1 = billy.makeForm("shrubbery", "garden");
-    shrubsigner.signForm(*f1);
-    shrubexec.executeForm(*f1);
-    delete f1;
+    if (f1)
+    {
+        shrubsigner.signForm(*f1);
+        shrubexec.executeForm(*f1);
+        delete f1;
+    }
+    
 
     AForm* f2 = billy.makeForm("robotomy", "bender");
-
-    robotsigner.signForm(*f2);
-    robotexec.executeForm(*f2);
-    delete f2;
+    if (f2)
+    {
+        robotsigner.signForm(*f2);
+        robotexec.executeForm(*f2);
+        delete f2;
+    }
+    
 
     AForm* f3 = billy.makeForm("pardon", "zoidberg");
 
-    prespardsigner.signForm(*f3);
-    prespardexec.executeForm(*f3);
-    delete f3;
+    if (f3)
+    {
+        prespardsigner.signForm(*f3);
+        prespardexec.executeForm(*f3);
+        delete f3;
+    }
 
     AForm* f4 = billy.makeForm("unknown form", "nobody");
     if (f4 == NULL)
