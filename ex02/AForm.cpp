@@ -63,13 +63,29 @@ const char* AForm::GradeTooHighException::what() const throw()
     return ("Grade too high");
 }
 
+const char* AForm::FormNotSignedException::what() const throw()
+{
+    return("Form not signed");
+}
+
 void	AForm::beSigned(Bureaucrat &b)
 {
-	int bur_grade = b.getGrade();
-
-	if (bur_grade > this->getGradeToSign())
+	if (b.getGrade() > this->getGradeToSign())
 		throw AForm::GradeTooLowException();
 	m_is_signed = true;
+}
+
+void	AForm::beExcecuted(Bureaucrat const &b) const
+{
+    if (this->getIsSigned() == false)
+    {
+        throw AForm::FormNotSignedException();
+    }
+
+	if (b.getGrade() > this->getGradeToExcecute())
+    {
+		throw AForm::GradeTooLowException();
+    }
 }
 
 AForm::~AForm() {}

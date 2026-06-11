@@ -2,7 +2,7 @@ NAME = ex02
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = Bureaucrat.cpp AForm.cpp main.cpp 
+SRCS = Bureaucrat.cpp AForm.cpp main.cpp  ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 .PHONY: all clean fclean re
